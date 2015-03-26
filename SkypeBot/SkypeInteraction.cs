@@ -113,7 +113,7 @@ namespace SkypeBot
 
             foreach (IUser user in usersWaiting)
             {
-                if (!user.IsAuthorized && skype.User.Handle != "replica.of.kzd")
+                if (!user.IsAuthorized && skype.User.Handle != "alexander.sirko1")
                     skype.set_UserIsAuthorized(user.Handle, true);
             }
 
