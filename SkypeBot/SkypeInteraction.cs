@@ -11,6 +11,27 @@ namespace SkypeBot
     {
         // constants and variables
         private const string headAdmin = "alexander.sirko1";
+        private static List<string> headAdmins =
+            new List<string>()
+            {
+                "aleksssi1",
+                "alexander.sirko1",
+                "anton_kol1",
+                "antonello-kiev",
+                "aversown",
+                "berezenskyi",
+                "denis.babadzhanov",
+                "dima.softheme",
+                "gulebas12",
+                "izzy-99",
+                "korolyov.sergey1",
+                "maksimus_ua",
+                "niakse",
+                "schneidmiller_v",
+                "tasjamylti",
+                "v.gergiev",
+                "vitalik_korn88"
+            };
         private static bool initialized = false;
         
         private static SkypeClass skype = new SkypeClass();
@@ -128,7 +149,7 @@ namespace SkypeBot
                 if (message.Sender.Handle == skype.User.Handle)
                     continue;
                 // admin is filtered
-                else if (message.Sender.Handle == headAdmin)
+                else if (headAdmins.Any(s=>message.Sender.Handle.Contains(s)))
                 {
                     if (message.Body.StartsWith("."))
                         try
